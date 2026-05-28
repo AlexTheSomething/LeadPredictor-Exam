@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadPredictor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar/Controls -->
+        <aside class="sidebar">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <h2>LeadPredictor</h2>
+            </div>
+            
+            <div class="form-group">
+                <label>Language</label>
+                <select><option>ðŸ‡ºðŸ‡¸ English</option></select>
+            </div>
+            <div class="form-group">
+                <label>Currency</label>
+                <select><option>$ US Dollar</option></select>
+            </div>
+            <div class="form-group">
+                <label>Campaign Start</label>
+                <input type="date" value="2025-05-08">
+            </div>
+            <div class="form-group">
+                <label>Campaign End</label>
+                <input type="date" value="2025-11-04">
+            </div>
+            
+            <div class="form-group">
+                <label>Total Revenue</label>
+                <div class="input-icon">
+                    <span>$</span>
+                    <input type="number" id="totalRevenue" value="10000">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Avg. Order Value</label>
+                <div class="input-icon">
+                    <span>$</span>
+                    <input type="number" id="avgOrderValue" value="1000">
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="top-section">
+                <!-- Chart Area -->
+                <div class="chart-area">
+                    <div class="chart-placeholder">
+                        <div class="chart-bars">
+                            <div class="bar-group"><div class="bar bar-prospects" style="height: 100%;"></div><div class="bar bar-leads" style="height: 20%;"></div><div class="bar bar-customers" style="height: 8%;"></div></div>
+                            <div class="bar-group"><div class="bar bar-prospects" style="height: 90%;"></div><div class="bar bar-leads" style="height: 18%;"></div><div class="bar bar-customers" style="height: 7%;"></div></div>
+                            <div class="bar-group"><div class="bar bar-prospects" style="height: 110%;"></div><div class="bar bar-leads" style="height: 25%;"></div><div class="bar bar-customers" style="height: 10%;"></div></div>
+                            <div class="bar-group"><div class="bar bar-prospects" style="height: 125%;"></div><div class="bar bar-leads" style="height: 30%;"></div><div class="bar bar-customers" style="height: 12%;"></div></div>
+                            <div class="bar-group"><div class="bar bar-prospects" style="height: 140%;"></div><div class="bar bar-leads" style="height: 35%;"></div><div class="bar bar-customers" style="height: 15%;"></div></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>0 people</span><span>20 people</span><span>40 people</span><span>60 people</span><span>80 people</span><span>100 people</span><span>125 people</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-area">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title"><span class="dot"></span> Prospects</div>
+                            <div class="stat-percent">100%</div>
+                        </div>
+                        <div class="stat-value" id="prospectsResult">125</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title"><span class="dot"></span> Leads</div>
+                            <div class="stat-percent">20%</div>
+                        </div>
+                        <div class="stat-value" id="leadsResult">25</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title"><span class="dot"></span> Customers</div>
+                            <div class="stat-percent">8%</div>
+                        </div>
+                        <div class="stat-value" id="customersResult">10</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-section">
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Lead Response Rate</label>
+                        <span id="leadResponseRateVal">40.00%</span>
+                    </div>
+                    <input type="range" id="leadResponseRate" min="0" max="100" step="0.01" value="40">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Prospect Response Rate</label>
+                        <span id="prospectResponseRateVal">20.00%</span>
+                    </div>
+                    <input type="range" id="prospectResponseRate" min="0" max="100" step="0.01" value="20">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
