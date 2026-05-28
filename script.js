@@ -18,7 +18,7 @@
         const prospectResponseRate = parseFloat(prospectResponseRateInput.value) || 1;
 
         // Formula 01: Customers = Total Revenue / Avg Order Value
-        const customers = Math.round(totalRevenue * avgOrderValue);
+        const customers = Math.round(totalRevenue / avgOrderValue);
 
         // Formula 02: Leads = Customers * 100 / Lead Response Rate
         const leads = Math.round(customers * 100 / leadResponseRate);
