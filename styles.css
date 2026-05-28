@@ -246,3 +246,5 @@ input[type=range]::-webkit-slider-runnable-track {
     background: var(--border-color);
     border-radius: 2px;
 }
+
+.chart-bars:hover .bar { opacity: 0.8; transition: opacity 0.3s; }
