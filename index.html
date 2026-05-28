@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,16 +55,56 @@
             <div class="top-section">
                 <!-- Chart Area -->
                 <div class="chart-area">
-                    <div class="chart-placeholder">
-                        <div class="chart-bars">
-                            <div class="bar-group"><div class="bar bar-prospects" style="height: 100%;"></div><div class="bar bar-leads" style="height: 20%;"></div><div class="bar bar-customers" style="height: 8%;"></div></div>
-                            <div class="bar-group"><div class="bar bar-prospects" style="height: 90%;"></div><div class="bar bar-leads" style="height: 18%;"></div><div class="bar bar-customers" style="height: 7%;"></div></div>
-                            <div class="bar-group"><div class="bar bar-prospects" style="height: 110%;"></div><div class="bar bar-leads" style="height: 25%;"></div><div class="bar bar-customers" style="height: 10%;"></div></div>
-                            <div class="bar-group"><div class="bar bar-prospects" style="height: 125%;"></div><div class="bar bar-leads" style="height: 30%;"></div><div class="bar bar-customers" style="height: 12%;"></div></div>
-                            <div class="bar-group"><div class="bar bar-prospects" style="height: 140%;"></div><div class="bar bar-leads" style="height: 35%;"></div><div class="bar bar-customers" style="height: 15%;"></div></div>
+                    <div class="chart-title-y">Months</div>
+                    <div class="chart-container">
+                        <div class="chart-row" id="row-5" data-month="5">
+                            <span class="month-label">5</span>
+                            <div class="bar-track">
+                                <div class="bar bar-prospects" id="bar-p-5"></div>
+                                <div class="bar bar-leads" id="bar-l-5"></div>
+                                <div class="bar bar-customers" id="bar-c-5"></div>
+                            </div>
                         </div>
-                        <div class="chart-labels">
-                            <span>0 people</span><span>20 people</span><span>40 people</span><span>60 people</span><span>80 people</span><span>100 people</span><span>125 people</span>
+                        <div class="chart-row" id="row-4" data-month="4">
+                            <span class="month-label">4</span>
+                            <div class="bar-track">
+                                <div class="bar bar-prospects" id="bar-p-4"></div>
+                                <div class="bar bar-leads" id="bar-l-4"></div>
+                                <div class="bar bar-customers" id="bar-c-4"></div>
+                            </div>
+                        </div>
+                        <div class="chart-row" id="row-3" data-month="3">
+                            <span class="month-label">3</span>
+                            <div class="bar-track">
+                                <div class="bar bar-prospects" id="bar-p-3"></div>
+                                <div class="bar bar-leads" id="bar-l-3"></div>
+                                <div class="bar bar-customers" id="bar-c-3"></div>
+                            </div>
+                        </div>
+                        <div class="chart-row" id="row-2" data-month="2">
+                            <span class="month-label">2</span>
+                            <div class="bar-track">
+                                <div class="bar bar-prospects" id="bar-p-2"></div>
+                                <div class="bar bar-leads" id="bar-l-2"></div>
+                                <div class="bar bar-customers" id="bar-c-2"></div>
+                            </div>
+                        </div>
+                        <div class="chart-row" id="row-1" data-month="1">
+                            <span class="month-label">1</span>
+                            <div class="bar-track">
+                                <div class="bar bar-prospects" id="bar-p-1"></div>
+                                <div class="bar bar-leads" id="bar-l-1"></div>
+                                <div class="bar bar-customers" id="bar-c-1"></div>
+                            </div>
+                        </div>
+                        <div class="chart-x-axis">
+                            <span>0 people</span>
+                            <span>20 people</span>
+                            <span>40 people</span>
+                            <span>60 people</span>
+                            <span>80 people</span>
+                            <span>100 people</span>
+                            <span>120 people</span>
                         </div>
                     </div>
                 </div>
@@ -73,22 +113,22 @@
                 <div class="stats-area">
                     <div class="stat-card">
                         <div class="stat-header">
-                            <div class="stat-title"><span class="dot"></span> Prospects</div>
-                            <div class="stat-percent">100%</div>
+                            <div class="stat-title"><span class="dot" style="background-color: var(--prospects-color)"></span> Prospects</div>
+                            <div class="stat-percent" id="prospectsPercent">100%</div>
                         </div>
                         <div class="stat-value" id="prospectsResult">125</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
-                            <div class="stat-title"><span class="dot"></span> Leads</div>
-                            <div class="stat-percent">20%</div>
+                            <div class="stat-title"><span class="dot" style="background-color: var(--leads-color)"></span> Leads</div>
+                            <div class="stat-percent" id="leadsPercent">20%</div>
                         </div>
                         <div class="stat-value" id="leadsResult">25</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
-                            <div class="stat-title"><span class="dot"></span> Customers</div>
-                            <div class="stat-percent">8%</div>
+                            <div class="stat-title"><span class="dot" style="background-color: var(--customers-color)"></span> Customers</div>
+                            <div class="stat-percent" id="customersPercent">8%</div>
                         </div>
                         <div class="stat-value" id="customersResult">10</div>
                     </div>

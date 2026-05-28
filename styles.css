@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg-color: #0f172a;
     --panel-bg: #1e293b;
     --card-bg: #334155;
@@ -118,46 +118,116 @@ body {
     flex: 2;
     background: var(--card-bg);
     border-radius: 8px;
-    padding: 20px;
+    padding: 24px 20px 20px 20px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    border: 1px solid var(--border-color);
 }
 
-.chart-placeholder {
-    flex: 1;
+.chart-title-y {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: rotate(-90deg) translateY(-50%);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.chart-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-}
-.chart-bars {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
     height: 100%;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
+    justify-content: space-between;
 }
-.bar-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 40px;
-    gap: 2px;
-}
-.bar {
-    border-radius: 2px;
-    width: 100%;
-}
-.bar-prospects { background: var(--prospects-color); height: 100px; }
-.bar-leads { background: var(--leads-color); height: 40px; }
-.bar-customers { background: #f8fafc; height: 16px; }
 
-.chart-labels {
+.chart-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Custom Tooltip */
+.chart-row::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background: rgba(15, 23, 42, 0.95);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    border: 1px solid var(--border-color);
+}
+
+.chart-row:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.month-label {
+    width: 15px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: right;
+    font-weight: 500;
+}
+
+.bar-track {
+    flex: 1;
+    height: 24px;
+    position: relative;
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bar-prospects {
+    background: var(--prospects-color);
+    z-index: 1;
+}
+
+.bar-leads {
+    background: var(--leads-color);
+    z-index: 2;
+}
+
+.bar-customers {
+    background: var(--customers-color);
+    z-index: 3;
+}
+
+.chart-x-axis {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    padding-left: 31px; /* Offset for month label + gap */
     font-size: 0.7rem;
     color: var(--text-secondary);
+    border-top: 1px solid rgba(71, 85, 105, 0.4);
+    padding-top: 8px;
+    margin-top: 4px;
 }
 
 .stats-area {
